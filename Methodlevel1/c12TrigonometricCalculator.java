@@ -1,29 +1,40 @@
-public class c12TrigonometricCalculator {
+import java.util.Scanner;
 
-    public double[] calculateTrigonometricFunctions(double angle) {
-        // Convert the angle from degrees to radians
-        double radians = Math.toRadians(angle);
-        
-        // Calculate trigonometric values
-        double sine = Math.sin(radians);
-        double cosine = Math.cos(radians);
-        double tangent = Math.tan(radians);
-        
-        // Return results as an array
-        return new double[] { sine, cosine, tangent };
-    }
+class c12TrigonometricCalculator{
+public double[] calculateTrigonometricFunctions(double angle){
+   
+        double[] a= new double[3];
+		
+		double r=angle*0.0175;
+	     
+		 a[0]=Math.sin(r);
+		 a[1]=Math.cos(r);
+		 a[2]=Math.tan(r);
+		
+		 
+		 return a;
+   }
+   
+   
+   public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+		
+		//take input
+		
+		System.out.println("enter the angle");
+		double n1=sc.nextDouble();
+		
 
-    public static void main(String[] args) {
-        TrigonometricCalculator calculator = new TrigonometricCalculator();
-        
-        // Example: Calculate for a given angle
-        double angle = 45.0; // You can change this value to test other angles
-        double[] results = calculator.calculateTrigonometricFunctions(angle);
-        
-        // Display the results
-        System.out.printf("Angle: %.2f degrees%n", angle);
-        System.out.printf("Sine: %.4f%n", results[0]);
-        System.out.printf("Cosine: %.4f%n", results[1]);
-        System.out.printf("Tangent: %.4f%n", results[2]);
-    }
+		
+		Angle obj=new Angle();
+		double[] arr=obj.calculateTrigonometricFunctions(n1);
+		
+		System.out.println("the sine is "+arr[0]+" the cosine is "+arr[1]+" and the tangent is "+arr[2]);
+		
+		sc.close();
+		
+		
+   }
+   
+   
 }
